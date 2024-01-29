@@ -10,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onLanguage:typescript"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -27,8 +27,9 @@
     "menus": {
       "commandPalette": [
         {
+          "when": "resourceLangId == typescript",
           "command": "extension.greenArrow",
-          "when": "editorTextFocus"
+          "group": "navigation"
         }
       ]
     }
