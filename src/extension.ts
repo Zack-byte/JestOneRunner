@@ -23,19 +23,10 @@ export function activate(context: vscode.ExtensionContext) {
 
       const filePath = editor.document.uri.fsPath;
       const relativeFilePath = vscode.workspace.asRelativePath(filePath);
-      const command = `npm run test:file ${relativeFilePath}`;
 
-      child_process.exec(command, (error, stdout, stderr) => {
-        if (error) {
-          vscode.window.showErrorMessage(`Error: ${error.message}`);
-          return;
-        }
-        if (stderr) {
-          vscode.window.showErrorMessage(`Error: ${stderr}`);
-          return;
-        }
-        vscode.window.showInformationMessage(`Output: ${stdout}`);
-      });
+      const terminal = vscode.window.createTerminal();
+      terminal.show();
+      terminal.sendText(`npm run test:file ${relativeFilePath}`);
     }
   );
 
