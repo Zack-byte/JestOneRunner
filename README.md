@@ -14,6 +14,10 @@ In order for this extension to work your Angular projects package.json must have
 
 To use this extension use the **VSCODE** Extensions Panel and select `Install from VSIX` You can either use the one provided in the **GIT REPO** or you can package the project yourself using the `vsce`  tool and packaging the project yourself.
 
+## Extension Conflicts
+
+**VSCode Neovim** seems to cause the `Run Test` button to disappear when opening files. Not sure why. In order to circumvent this I uninstalled the extension and got my **Vim** keybindings from the **Vim** extension alone.  
+
 ### 1.0.0
 
 Super basic but plan to expand on this as I run into different situations. 
